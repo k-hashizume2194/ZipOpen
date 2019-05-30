@@ -30,6 +30,14 @@ Partial Class Form1
         Me.TryTimeLabel = New System.Windows.Forms.Label()
         Me.DecompressionZipPassTextBox = New System.Windows.Forms.TextBox()
         Me.DecompressionZipPassLabel = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DecompressionTargetFolderTextBox = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.MinifyFilePathTextBox = New System.Windows.Forms.TextBox()
+        Me.CompressedFilePathTextBox = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'CompressionButton
@@ -86,7 +94,7 @@ Partial Class Form1
         '
         Me.DecompressionZipPassTextBox.Location = New System.Drawing.Point(234, 153)
         Me.DecompressionZipPassTextBox.Name = "DecompressionZipPassTextBox"
-        Me.DecompressionZipPassTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.DecompressionZipPassTextBox.Size = New System.Drawing.Size(324, 22)
         Me.DecompressionZipPassTextBox.TabIndex = 6
         '
         'DecompressionZipPassLabel
@@ -98,11 +106,83 @@ Partial Class Form1
         Me.DecompressionZipPassLabel.TabIndex = 7
         Me.DecompressionZipPassLabel.Text = "解凍するZipのパス："
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(91, 189)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(103, 15)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "解凍先フォルダ："
+        '
+        'DecompressionTargetFolderTextBox
+        '
+        Me.DecompressionTargetFolderTextBox.Location = New System.Drawing.Point(234, 189)
+        Me.DecompressionTargetFolderTextBox.Name = "DecompressionTargetFolderTextBox"
+        Me.DecompressionTargetFolderTextBox.Size = New System.Drawing.Size(324, 22)
+        Me.DecompressionTargetFolderTextBox.TabIndex = 9
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(226, 36)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(146, 15)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "圧縮するファイルのパス："
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(226, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(157, 15)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "圧縮されたファイルのパス："
+        '
+        'MinifyFilePathTextBox
+        '
+        Me.MinifyFilePathTextBox.Location = New System.Drawing.Point(402, 29)
+        Me.MinifyFilePathTextBox.Name = "MinifyFilePathTextBox"
+        Me.MinifyFilePathTextBox.Size = New System.Drawing.Size(339, 22)
+        Me.MinifyFilePathTextBox.TabIndex = 12
+        '
+        'CompressedFilePathTextBox
+        '
+        Me.CompressedFilePathTextBox.Location = New System.Drawing.Point(402, 56)
+        Me.CompressedFilePathTextBox.Name = "CompressedFilePathTextBox"
+        Me.CompressedFilePathTextBox.Size = New System.Drawing.Size(339, 22)
+        Me.CompressedFilePathTextBox.TabIndex = 13
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(300, 84)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 15)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "パスワード："
+        '
+        'PasswordTextBox
+        '
+        Me.PasswordTextBox.Location = New System.Drawing.Point(402, 84)
+        Me.PasswordTextBox.Name = "PasswordTextBox"
+        Me.PasswordTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.PasswordTextBox.TabIndex = 15
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PasswordTextBox)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.CompressedFilePathTextBox)
+        Me.Controls.Add(Me.MinifyFilePathTextBox)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.DecompressionTargetFolderTextBox)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DecompressionZipPassLabel)
         Me.Controls.Add(Me.DecompressionZipPassTextBox)
         Me.Controls.Add(Me.TryTimeLabel)
@@ -112,7 +192,7 @@ Partial Class Form1
         Me.Controls.Add(Me.DecompressionButton)
         Me.Controls.Add(Me.CompressionButton)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "暗号Zip解凍アプリ"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -126,4 +206,12 @@ Partial Class Form1
     Friend WithEvents TryTimeLabel As Label
     Friend WithEvents DecompressionZipPassTextBox As TextBox
     Friend WithEvents DecompressionZipPassLabel As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents DecompressionTargetFolderTextBox As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents MinifyFilePathTextBox As TextBox
+    Friend WithEvents CompressedFilePathTextBox As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PasswordTextBox As TextBox
 End Class
