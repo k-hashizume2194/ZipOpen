@@ -25,8 +25,15 @@
         ''fastZip.Password = "password"
         fastZip.Password = Me.PasswordTextBox.Text
 
-        '圧縮してZIP書庫を作成 
-        fastZip.CreateZip(zipFileName, sourceDirectory, recurse, Nothing, Nothing)
+        Try
+            '圧縮してZIP書庫を作成 
+            fastZip.CreateZip(zipFileName, sourceDirectory, recurse, Nothing, Nothing)
+            MessageBox.Show("圧縮成功!!" & vbCrLf &
+                        "パスワードは" & Me.PasswordTextBox.Text & "です。")
+        Catch ex As Exception
+        Finally
+        End Try
+
     End Sub
 
     ''' <summary>
@@ -55,12 +62,22 @@
         'パスワードが設定されている書庫をパスワードを指定せずに展開しようとすると、 
         '　例外ZipExceptionがスローされる 
         'fastZip.Password = "password"
-        'fastZip.Password = "1111"
 
         Dim numbers = Enumerable.Range(0, 10000)
+        'パスワードを試した回数
+        Dim TryCount As Integer = 0
+
+        'Stopwatchオブジェクトを作成する 
+        Dim sw As New System.Diagnostics.Stopwatch()
+        'ストップウォッチを開始する 
+        sw.Start()
+
+        '次のようにStartNewメソッドを使うと、上の2行と同じことが1行でできる 
+        'Dim sw As System.Diagnostics.Stopwatch = System.Diagnostics.Stopwatch.StartNew()
 
         '0000から9999を順にパスワードに当てはめる
         For Each num As Integer In numbers
+            TryCount += 1
             Console.WriteLine(num.ToString("0000"))
 
             'パスワードに当てはめる
@@ -70,6 +87,12 @@
                 fastZip.ExtractZip(zipFileName, targetDirectory, fileFilter)
                 MessageBox.Show("ロック解除成功!!!" & vbCrLf &
                                     "パスワードは" & num.ToString("0000") & "です。")
+                'ストップウォッチを止める 
+                sw.Stop()
+                '結果を表示する 
+                Console.WriteLine(sw.ElapsedMilliseconds / 1000)
+                TryCountTextBox.Text = TryCount
+                TryTimeTextBox.Text = (sw.ElapsedMilliseconds / 1000).ToString()
                 '成功したらぬける
                 Exit Sub
             Catch ex As Exception

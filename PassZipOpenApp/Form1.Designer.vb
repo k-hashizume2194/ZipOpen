@@ -26,7 +26,7 @@ Partial Class Form1
         Me.DecompressionButton = New System.Windows.Forms.Button()
         Me.TryCountTextBox = New System.Windows.Forms.TextBox()
         Me.TryCountLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TryTimeTextBox = New System.Windows.Forms.TextBox()
         Me.TryTimeLabel = New System.Windows.Forms.Label()
         Me.DecompressionZipPassTextBox = New System.Windows.Forms.TextBox()
         Me.DecompressionZipPassLabel = New System.Windows.Forms.Label()
@@ -38,11 +38,13 @@ Partial Class Form1
         Me.CompressedFilePathTextBox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'CompressionButton
         '
-        Me.CompressionButton.Location = New System.Drawing.Point(91, 43)
+        Me.CompressionButton.Location = New System.Drawing.Point(135, 36)
         Me.CompressionButton.Name = "CompressionButton"
         Me.CompressionButton.Size = New System.Drawing.Size(75, 31)
         Me.CompressionButton.TabIndex = 0
@@ -51,7 +53,7 @@ Partial Class Form1
         '
         'DecompressionButton
         '
-        Me.DecompressionButton.Location = New System.Drawing.Point(91, 107)
+        Me.DecompressionButton.Location = New System.Drawing.Point(59, 129)
         Me.DecompressionButton.Name = "DecompressionButton"
         Me.DecompressionButton.Size = New System.Drawing.Size(75, 31)
         Me.DecompressionButton.TabIndex = 1
@@ -60,7 +62,7 @@ Partial Class Form1
         '
         'TryCountTextBox
         '
-        Me.TryCountTextBox.Location = New System.Drawing.Point(198, 250)
+        Me.TryCountTextBox.Location = New System.Drawing.Point(151, 276)
         Me.TryCountTextBox.Name = "TryCountTextBox"
         Me.TryCountTextBox.Size = New System.Drawing.Size(100, 22)
         Me.TryCountTextBox.TabIndex = 2
@@ -68,31 +70,31 @@ Partial Class Form1
         'TryCountLabel
         '
         Me.TryCountLabel.AutoSize = True
-        Me.TryCountLabel.Location = New System.Drawing.Point(121, 250)
+        Me.TryCountLabel.Location = New System.Drawing.Point(59, 279)
         Me.TryCountLabel.Name = "TryCountLabel"
-        Me.TryCountLabel.Size = New System.Drawing.Size(45, 15)
+        Me.TryCountLabel.Size = New System.Drawing.Size(75, 15)
         Me.TryCountLabel.TabIndex = 3
-        Me.TryCountLabel.Text = "回数："
+        Me.TryCountLabel.Text = "解析回数："
         '
-        'TextBox1
+        'TryTimeTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(198, 291)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 4
+        Me.TryTimeTextBox.Location = New System.Drawing.Point(151, 315)
+        Me.TryTimeTextBox.Name = "TryTimeTextBox"
+        Me.TryTimeTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.TryTimeTextBox.TabIndex = 4
         '
         'TryTimeLabel
         '
         Me.TryTimeLabel.AutoSize = True
-        Me.TryTimeLabel.Location = New System.Drawing.Point(124, 291)
+        Me.TryTimeLabel.Location = New System.Drawing.Point(59, 315)
         Me.TryTimeLabel.Name = "TryTimeLabel"
-        Me.TryTimeLabel.Size = New System.Drawing.Size(45, 15)
+        Me.TryTimeLabel.Size = New System.Drawing.Size(75, 15)
         Me.TryTimeLabel.TabIndex = 5
-        Me.TryTimeLabel.Text = "時間："
+        Me.TryTimeLabel.Text = "解析時間："
         '
         'DecompressionZipPassTextBox
         '
-        Me.DecompressionZipPassTextBox.Location = New System.Drawing.Point(234, 153)
+        Me.DecompressionZipPassTextBox.Location = New System.Drawing.Point(195, 171)
         Me.DecompressionZipPassTextBox.Name = "DecompressionZipPassTextBox"
         Me.DecompressionZipPassTextBox.Size = New System.Drawing.Size(324, 22)
         Me.DecompressionZipPassTextBox.TabIndex = 6
@@ -100,7 +102,7 @@ Partial Class Form1
         'DecompressionZipPassLabel
         '
         Me.DecompressionZipPassLabel.AutoSize = True
-        Me.DecompressionZipPassLabel.Location = New System.Drawing.Point(88, 156)
+        Me.DecompressionZipPassLabel.Location = New System.Drawing.Point(56, 174)
         Me.DecompressionZipPassLabel.Name = "DecompressionZipPassLabel"
         Me.DecompressionZipPassLabel.Size = New System.Drawing.Size(122, 15)
         Me.DecompressionZipPassLabel.TabIndex = 7
@@ -109,7 +111,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(91, 189)
+        Me.Label1.Location = New System.Drawing.Point(75, 209)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(103, 15)
         Me.Label1.TabIndex = 8
@@ -117,7 +119,7 @@ Partial Class Form1
         '
         'DecompressionTargetFolderTextBox
         '
-        Me.DecompressionTargetFolderTextBox.Location = New System.Drawing.Point(234, 189)
+        Me.DecompressionTargetFolderTextBox.Location = New System.Drawing.Point(195, 206)
         Me.DecompressionTargetFolderTextBox.Name = "DecompressionTargetFolderTextBox"
         Me.DecompressionTargetFolderTextBox.Size = New System.Drawing.Size(324, 22)
         Me.DecompressionTargetFolderTextBox.TabIndex = 9
@@ -125,7 +127,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(226, 36)
+        Me.Label2.Location = New System.Drawing.Point(237, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(146, 15)
         Me.Label2.TabIndex = 10
@@ -157,7 +159,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(300, 84)
+        Me.Label4.Location = New System.Drawing.Point(311, 87)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(72, 15)
         Me.Label4.TabIndex = 14
@@ -170,11 +172,31 @@ Partial Class Form1
         Me.PasswordTextBox.Size = New System.Drawing.Size(100, 22)
         Me.PasswordTextBox.TabIndex = 15
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(257, 322)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(22, 15)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "秒"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(257, 283)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(22, 15)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "回"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.PasswordTextBox)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CompressedFilePathTextBox)
@@ -186,7 +208,7 @@ Partial Class Form1
         Me.Controls.Add(Me.DecompressionZipPassLabel)
         Me.Controls.Add(Me.DecompressionZipPassTextBox)
         Me.Controls.Add(Me.TryTimeLabel)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TryTimeTextBox)
         Me.Controls.Add(Me.TryCountLabel)
         Me.Controls.Add(Me.TryCountTextBox)
         Me.Controls.Add(Me.DecompressionButton)
@@ -202,7 +224,7 @@ Partial Class Form1
     Friend WithEvents DecompressionButton As Button
     Friend WithEvents TryCountTextBox As TextBox
     Friend WithEvents TryCountLabel As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TryTimeTextBox As TextBox
     Friend WithEvents TryTimeLabel As Label
     Friend WithEvents DecompressionZipPassTextBox As TextBox
     Friend WithEvents DecompressionZipPassLabel As Label
@@ -214,4 +236,6 @@ Partial Class Form1
     Friend WithEvents CompressedFilePathTextBox As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents PasswordTextBox As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class
